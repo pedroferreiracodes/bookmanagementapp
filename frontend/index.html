@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta charset="utf-8" />
+        <title>bookmanagementapp</title>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link
+            href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/skeleton.css" />
+        <link rel="stylesheet" href="css/custom.css" />
+
+        <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+
+        <!-- JS && jQuery
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="section landing" style="margin-top: 10%;">
+        <div class="container">
+            <div class="row">
+                <div class="one-half column">
+                    <h1>bookmanagementapp</h1>
+                    <p>a book database management app</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="one-half column">
+                    <a class="button button-primary" href="#">get all books</a>
+                </div>
+                <div class="one-half column">
+                    <input
+                        type="text"
+                        placeholder="Book Id"
+                        id="bookIdInput"
+                    />
+                    <a class="button button-primary" href="#">get book by id</a>
+                </div>
+            </div>
+                <div id="bookByIdPlace"></div>
+            </div>
+        </div>
+    </div>
+    <div class="section addBook">
+        <div class="container">
+            <h3>Add a Book to the Collection</h3>
+            <div class="row" style="margin-top: 10%">
+                <form>
+                    <div class="row">
+                        <div class="three columns">
+                            <label for="bookTitleInput">Title</label>
+                            <input
+                                class="u-full-width"
+                                type="text"
+                                placeholder="Book Title"
+                                id="bookTitleInput"
+                            />
+                        </div>
+                        <div class="three columns">
+                            <label for="bookAuthorInput">Author</label>
+                            <input
+                                class="u-full-width"
+                                type="text"
+                                placeholder="Book Author"
+                                id="bookAuthorInput">
+                            </input>
+                        </div>
+                        <div class="two columns">
+                            <label for="bookIsbnInput">ISBN</label>
+                            <input
+                                class="u-full-width"
+                                type="text"
+                                pattern="(ISBN[-]*(1[03])*[ ]*(: ){0,1})*(([0-9Xx][- ]*){13}|([0-9Xx][- ]*){10})"
+                                placeholder="Book ISBN"
+                                id="bookIsbnInput">
+                            </input>
+                        </div>
+                        <div class="two columns">
+                            <label for="bookPriceInput">Price</label>
+                            <input
+                                class="u-full-width"
+                                type="text"
+                                pattern="^[0-9]*$"
+                                placeholder="Book Price"
+                                id="bookPriceInput">
+                            </input>
+                        </div>
+                        <div class="two columns">
+                            <label for="bookPubDateInput">Published Date</label>
+                            <input
+                                class="u-full-width"
+                                type="date"
+                                placeholder="Select Date"
+                                id="bookPubDateInput">
+                            </input>
+                        </div>
+                    </div>
+                </form>
+                <a class="button button-primary" href="#">add book</a>
+            </div>
+        </div>
+    </div>
+    <div class="section bookTable">
+        <div class="container">
+            <h3>Books in Collection</h3>
+            <div>
+                <table class="u-full-width">
+                  <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Title</th>
+                      <th>Author</th>
+                      <th>ISBN</th>
+                      <th>Price</th>
+                      <th>Published Date</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bookTableBody">
+                  </tbody>
+                </table>
+            </div>
+            <div id="editBookPlace"></div>
+        </div>
+    </div>
+
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    </body>
+</html>
